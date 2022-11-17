@@ -12,7 +12,25 @@ function BarChart() {
   const findMaxValue=()=>{
     const data = [...barChartData]
     data.sort((a,b)=>b.y-a.y)
-    return data[0].y
+    return data[0].y*0.001
+  }
+
+  const lableY = ()=>{
+    const maxValue= findMaxValue()
+    console.log(maxValue)
+    let labels = []
+    for(let i=0;i<=maxValue;i++){
+        labels.push(
+            <div
+              key={i}
+              className="chartLabelY"
+              style={{ height: maxValue*10 }}
+            >
+              {maxValue-i}k
+            </div>
+          );
+    }
+    return labels
   }
   return (
     <div className="container">
@@ -21,25 +39,15 @@ function BarChart() {
         <h3>Y-Axis</h3>
       </div>
         <div className="labelYContainer">
-          {barChartData.map((data, index) => {
-            return (
-              <div
-                key={index}
-                className="chartLabelY"
-                style={{ height: findMaxValue()*0.01 }}
-              >
-                {barChartData.length - index}k
-              </div>
-            );
-          })}
+          {barChartData.length? lableY():null}
         </div>
         {barChartData.map((data, index) => {
           return (
             <div
               key={index}
               className="chart"
-              style={{ height: data.y * 0.07 }}
-            ></div>
+              style={{ height: data.y*0.01*findMaxValue() }}
+            >{data.y}</div>
           );
         })}
       </div>

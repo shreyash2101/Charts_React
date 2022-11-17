@@ -21,11 +21,12 @@
   width: 70px;
   background-color: rgb(215, 206, 255);
   border: 1px solid rgb(88, 47, 238);
+  color: rgb(88, 47, 238);
   border-radius: 8px 8px 0px 0px;
   box-shadow: 2px 1px 1px rgb(88, 47, 238);
 }
-.chart:hover{
-  background-color: white
+.chart:hover {
+  background-color: white;
 }
 .labelXContainer {
   display: flex;
@@ -48,10 +49,14 @@
 }
 .labelYContainer {
   width: 70px;
+  justify-content: flex-end;
 }
 .chartLabelY {
   width: 70px;
   font-weight: bold;
   word-wrap: break-word;
   color: rgb(88, 47, 238);
+  align-items: end;
+  justify-content: center;
+  display: flex;
 }

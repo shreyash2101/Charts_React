@@ -4,7 +4,7 @@ function ChartData() {
     const DATA = [
         {
           x: "Anxious",
-          y: 6000
+          y: 7000
         },
         {
           x: "Happy",
